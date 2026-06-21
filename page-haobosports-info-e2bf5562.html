@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>好博体育 · 日常查询与对照指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: #f8f6f0;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+      color: #2e2b26;
+      line-height: 1.7;
+      padding: 0 1.5rem;
+    }
+    .page-wrap {
+      max-width: 820px;
+      margin: 2.4rem auto 4rem;
+    }
+
+    /* 顶部导航 */
+    .top-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0 0.5rem;
+      border-bottom: 1px solid #e0dbd1;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+    }
+    .top-nav .logo {
+      font-weight: 600;
+      font-size: 1.3rem;
+      letter-spacing: 0.02em;
+      color: #3b3a36;
+    }
+    .top-nav .logo span {
+      color: #b08968;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.6rem;
+      font-size: 0.95rem;
+    }
+    .nav-links a {
+      color: #5b554a;
+      text-decoration: none;
+      padding: 0.2rem 0;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .nav-links a:hover {
+      border-bottom-color: #b08968;
+      color: #2e2b26;
+    }
+
+    /* hero 区 */
+    .hero {
+      margin: 3rem 0 2.2rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px dashed #d9d3c8;
+    }
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      margin-bottom: 0.6rem;
+      color: #1f1d19;
+    }
+    .hero .subhead {
+      font-size: 1.1rem;
+      color: #5f5a50;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1rem;
+      color: #3d3932;
+    }
+
+    /* 卡片式场景模块 — 三个 */
+    .scene-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+      margin: 2.8rem 0;
+    }
+    .scene-card {
+      background: #ffffffef;
+      border-radius: 20px;
+      padding: 1.6rem 2rem 1.8rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e7e1d7;
+    }
+    .scene-card h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: #1f1d19;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .scene-card h3 .badge {
+      background: #e2dbcf;
+      font-size: 0.7rem;
+      font-weight: 500;
+      padding: 0.1rem 0.6rem;
+      border-radius: 30px;
+      color: #4b443a;
+    }
+    .scene-card p {
+      margin-top: 0.4rem;
+      color: #3d3932;
+    }
+    .scene-card .quote-tip {
+      background: #f4f0e9;
+      border-left: 4px solid #b08968;
+      padding: 0.8rem 1rem;
+      margin: 1rem 0 0.2rem;
+      border-radius: 0 10px 10px 0;
+      font-size: 0.95rem;
+      color: #3b352d;
+    }
+
+    /* 常见说明 / FAQ 摘要 */
+    .faq-section {
+      margin: 2.8rem 0 2.2rem;
+      border-top: 1px solid #e0dbd1;
+      padding-top: 1.8rem;
+    }
+    .faq-section h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      margin-bottom: 1.2rem;
+      color: #2e2b26;
+    }
+    .faq-item {
+      margin-bottom: 1.1rem;
+      border-bottom: 1px dotted #dcd5ca;
+      padding-bottom: 0.7rem;
+    }
+    .faq-item .question {
+      font-weight: 600;
+      color: #2a2621;
+    }
+    .faq-item .answer {
+      margin-top: 0.2rem;
+      color: #514c43;
+    }
+    .faq-item .answer a {
+      color: #7f6b53;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      transition: color 0.15s;
+    }
+    .faq-item .answer a:hover {
+      color: #b08968;
+    }
+
+    /* 延伸阅读 / 提示块 */
+    .extra-note {
+      background: #f1ede6;
+      border-radius: 18px;
+      padding: 1.5rem 1.8rem;
+      margin: 2.2rem 0 2rem;
+      border: 1px solid #dfd8cc;
+    }
+    .extra-note strong {
+      color: #1f1d19;
+    }
+
+    /* 页脚 */
+    .footer {
+      border-top: 1px solid #e0dbd1;
+      padding: 1.5rem 0 0.8rem;
+      font-size: 0.9rem;
+      color: #6f685e;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.8rem;
+    }
+    .footer a {
+      color: #7f6b53;
+      text-decoration: none;
+      border-bottom: 1px dotted #c4b9a9;
+    }
+    .footer a:hover {
+      border-bottom-color: #7f6b53;
+    }
+
+    /* 响应式 */
+    @media (max-width: 520px) {
+      body { padding: 0 1rem; }
+      .top-nav { flex-direction: column; align-items: stretch; }
+      .nav-links { flex-wrap: wrap; gap: 1rem; }
+      .hero h1 { font-size: 1.6rem; }
+      .scene-card { padding: 1.2rem 1.2rem 1.4rem; }
+      .faq-section h2 { font-size: 1.3rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- 顶部导航 -->
+  <header class="top-nav">
+    <div class="logo">◈ 好博<span>·</span>指南</div>
+    <div class="nav-links">
+      <a href="#">对照</a>
+      <a href="#">场景</a>
+      <a href="#">说明</a>
+      <a href="#">延伸</a>
+    </div>
+  </header>
+
+  <!-- hero 介绍 -->
+  <section class="hero">
+    <h1>日常查询 · 对照 · 延伸阅读</h1>
+    <div class="subhead">把零散的信息整理成可翻阅的卡片</div>
+    <p>不论是核对活动细节，还是梳理常见疑问，这个页面都围绕 <a href="https://page-haobosports.com" style="color:#7f6b53;text-decoration:underline;text-underline-offset:2px;">好博体育</a> 提供的信息框架来组织。三个场景模块分别对应查询、对照和延伸，适合慢慢浏览。</p>
+  </section>
+
+  <!-- 三个场景模块 -->
+  <div class="scene-grid">
+    <div class="scene-card">
+      <h3>📋 日常查询 <span class="badge">快速定位</span></h3>
+      <p>当你需要确认某项规则、时间或范围时，可以按照分类依次查阅。<br>例如：活动时段、参与条件、变动记录——这些内容在 <a href="https://page-haobosports.com" style="color:#7f6b53;text-decoration:underline;text-underline-offset:2px;">好博体育</a> 的对应页面里都有清晰描述，这里只做摘要整理。</p>
+      <div class="quote-tip">💡 建议先浏览整体分类，再定位具体条目。</div>
+    </div>
+
+    <div class="scene-card">
+      <h3>🔍 对照阅读 <span class="badge">并列对比</span></h3>
+      <p>把相似条目放在一起比较，更容易看出差异。比如不同阶段的调整说明、不同入口的适用范围。对照时注意看日期和标注，避免混淆。</p>
+      <div class="quote-tip">📌 如果发现不一致，以 <a href="https://page-haobosports.com" style="color:#7f6b53;text-decoration:underline;text-underline-offset:2px;">好博体育</a> 页面实时显示为准。</div>
+    </div>
+
+    <div class="scene-card">
+      <h3>📎 延伸阅读 <span class="badge">补充背景</span></h3>
+      <p>一些常见疑问的背后，往往有更具体的上下文。例如“为什么这样设置？”、“之前有过调整吗？”。延伸阅读部分整理了简短的解释，帮助你理解逻辑而非死记条目。</p>
+    </div>
+  </div>
+
+  <!-- 常见说明 (FAQ 摘要) -->
+  <section class="faq-section">
+    <h2>常见说明 · 摘要</h2>
+
+    <div class="faq-item">
+      <div class="question">⚡ 如何确认当前适用的是哪个版本？</div>
+      <div class="answer">页面顶部和底部通常会标注最后更新日期。日常查询时，直接参考 <a href="https://page-haobosports.com">好博体育</a> 即可，这里整理的摘要仅作为辅助对照。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="question">📅 内容多久更新一次？</div>
+      <div class="answer">没有固定周期，随原始信息变化而调整。建议每隔一段时间回看，或者把本页当作快速索引，具体详情仍以原页面为准。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="question">🔗 为什么需要对照阅读？</div>
+      <div class="answer">因为部分描述可能分散在不同位置，并列呈现可以减少遗漏。这里把相关条目按场景归拢，方便对照。</div>
+    </div>
+  </section>
+
+  <!-- 延伸提示块 -->
+  <div class="extra-note">
+    <strong>📘 一点阅读建议</strong><br>
+    本页不是为了替代原站，而是把零散信息按“查询—对照—延伸”重新排列。如果你在阅读中产生新的疑问，不妨回到 <a href="https://page-haobosports.com">好博体育</a> 直接检索。保持平实、克制的查阅习惯，会比匆忙翻页更有效率。
+  </div>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <span>整理内容 · 仅供参考</span>
+    <span><a href="https://page-haobosports.com">好博体育</a> · 信息索引页</span>
+  </footer>
+
+</div>
+</body>
+</html>
